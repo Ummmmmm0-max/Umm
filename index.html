@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aru 💙</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #173b70, #091b36 45%, #020914);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #eef6ff;
+    overflow-x: hidden;
+}
+
+/* ⭐ FLOATING WHITE STARS */
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.stars span {
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 10px white;
+    font-size: 20px;
+    opacity: .75;
+    animation: starFloat linear infinite;
+}
+
+.stars span:nth-child(1) {
+    left: 5%;
+    top: 18%;
+    animation-duration: 5s;
+}
+
+.stars span:nth-child(2) {
+    left: 9%;
+    top: 68%;
+    font-size: 14px;
+    animation-duration: 7s;
+}
+
+.stars span:nth-child(3) {
+    right: 6%;
+    top: 25%;
+    font-size: 17px;
+    animation-duration: 6s;
+}
+
+.stars span:nth-child(4) {
+    right: 10%;
+    top: 72%;
+    animation-duration: 8s;
+}
+
+.stars span:nth-child(5) {
+    right: 4%;
+    top: 48%;
+    font-size: 13px;
+    animation-duration: 5.5s;
+}
+
+@keyframes starFloat {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: .45;
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(12deg);
+        opacity: 1;
+    }
+}
+
+.box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(5,20,43,.84);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(110,180,255,.25);
+    border-radius: 30px;
+    padding: 30px 24px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.45);
+}
+
+.lock {
+    text-align: center;
+    font-size: 55px;
+    animation: float 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.sub {
+    text-align: center;
+    color: #9fc9f5;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+    background: #f3f8ff;
+    color: #10294b;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 15px;
+    border: 0;
+    border-radius: 15px;
+    background: linear-gradient(135deg,#1769c2,#3b9cff);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(30,130,230,.28);
+}
+
+#error {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+    color: #9dccff;
+}
+
+.hint {
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+#message {
+    display: none;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+#message h2 {
+    text-align: center;
+    color: #80bdff;
+    margin-bottom: 22px;
+}
+
+.question {
+    margin-top: 25px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(35,105,180,.12);
+    border: 1px solid rgba(120,190,255,.18);
+    border-radius: 22px;
+}
+
+.question p {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.answers {
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.ending {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+    animation: fade .9s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.flowers {
+    font-size: 68px;
+    animation: pop .9s ease,
+               float 2s ease-in-out infinite alternate;
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sparkles {
+    font-size: 19px;
+    letter-spacing: 9px;
+    margin-bottom: 8px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #7196bd;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING STARS -->
+<div class="stars">
+    <span>✦</span>
+    <span>✧</span>
+    <span>★</span>
+    <span>✦</span>
+    <span>✧</span>
+</div>
+
+<div class="box">
+
+<!-- PASSWORD SCREEN -->
+
+<div id="login">
+
+<div class="lock">🔐</div>
+
+<h1>Something special for Aruuu 👀</h1>
+
+<p class="sub">
+Enter the secret password
+</p>
+
+<input
+    type="password"
+    id="password"
+    placeholder="Password..."
+>
+
+<button onclick="checkPassword()">
+Open my surprise 💌
+</button>
+
+<div id="error">
+
+Wrong password 😭💀
+
+<div class="hint">
+Try this 👀: 10Aug
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ANNOUNCEMENT -->
+
+<div id="message">
+
+<h2>
+🚨 OFFICIAL ANNOUNCEMENT FOR MRS ARU 🚨
+</h2>
+
+<p>
+Ahem ahem… everyone please shut up, mujhe ek important announcement karni hai. 😭
+</p>
+
+<br>
+
+<p>
+Aru, tujhe pata hai tu kitni annoying hai?
+Like genuinely… qué pesada🎀👀eres 😭💀
+Kabhi pagal, kabhi churail, kabhi ganji…Or kabhi jangli billi?
+</p>
+
+<br>
+
+<p>
+<b>BUTTT… unfortunately 😔</b>
+<br>
+Itne saare defects ke bawajood, tu meri favourite person ban gayi hai.
+</p>
+
+<br>
+
+<p>
+Tere saath baatein karna, random guftagu mein ghanton nikal dena,
+bina kisi reason ke hasna… idk yaar, tere saath time kabhi boring nahi hota. 🫶🏻
+Aur sach bolun toh, din mein kitni bhi bakwaas ho, agar tujhse thodi si baat ho jaye na,
+mood automatically better ho jata hai. 😭❤️"kabhi kabhi kharab bhi kar deti hai"
+</p>
+
+<br>
+
+<p>
+Tujhe roast karna toh obviously meri favourite activity hai 💀
+Lekin tere saath woh choti choti conversations…
+I actually wouldn’t want to lose those.
+</p>
+
+<br>
+
+<p>
+And honestly,🙆🏻‍♂️pata nai 😂. 💀❤️
+</p>
+
+<br>
+
+<p>
+So today, after doing absolutely ZERO research and ZERO thinking…
+</p>
+
+<br>
+
+<p>
+I have reached a very serious conclusion:
+</p>
+
+<div class="question">
+
+<p>
+BOUNI 🤐meri favourite churail…
+</p>
+
+<p>
+¿Quieres ser mi GANJI CHURAIL? 👀❤️
+</p>
+
+<p>
+Will you be mine? 😭👉🏻👈🏻Xyou r already mine 😜🙂‍↔️
+</p>
+
+<div class="answers">
+
+Yes = 🫶🏻
+<br>
+No = fake answer, try again. 💀
+
+</div>
+
+</div>
+
+<br>
+
+<p style="text-align:center">
+
+Thank you for attending my Talk.
+<br><br>
+Now come here, ganji. 😭❤️
+
+</p>
+
+
+<!-- ONLY FLOWERS AT THE END -->
+
+<div class="ending" id="ending">
+
+<div class="sparkles">
+✨ ✨ ✨
+</div>
+
+<div class="flowers">
+💐
+</div>
+
+<p style="margin-top:10px;color:#9dccff;font-weight:700;">
+For my Aruuu 💙
+</p>
+
+</div>
+
+<div class="footer">
+Made with 💙 just for Aru
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function checkPassword() {
+
+    const password =
+        document.getElementById("password").value;
+
+    if (password === "10Aug") {
+
+        document.getElementById("login").style.display = "none";
+
+        document.getElementById("message").style.display = "block";
+
+        setTimeout(function() {
+
+            document.getElementById("ending").style.display = "block";
+
+        }, 3500);
+
+    } else {
+
+        document.getElementById("error").style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
